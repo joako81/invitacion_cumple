@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Cumpleaños de Alejandro</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        article {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Invitación de Cumpleaños de Alejandro</h1>
+        <p>¡Únete a la fiesta de Mario Bros!</p>
+    </header>
+    <main>
+        <article>
+            <h2>Datos de la Fiesta</h2>
+            <ul>
+                <li><strong>Nombre del cumpleañero:</strong> Alejandro</li>
+                <li><strong>Edad:</strong> 7 años</li>
+                <li><strong>Fecha:</strong> [Insertar fecha]</li>
+                <li><strong>Hora:</strong> [Insertar hora]</li>
+                <li><strong>Lugar:</strong> [Insertar dirección]</li>
+            </ul>
+        </article>
+        <article>
+            <h2>Detalles de la Fiesta</h2>
+            <p>¡Prepárate para una aventura épica con Mario y sus amigos! Habrá juegos, regalos, y mucha comida
+                italiana.</p>
+        </article>
+        <article>
+            <h2>RSVP</h2>
+            <form id="rsvpForm">
+                <label for="nombre">Nombre(s) del niño(s):</label>
+                <input type="text" id="nombre" name="nombre" required><br><br>
+                <label for="asistencia">¿Asistirá?</label>
+                <select id="asistencia" name="asistencia" required>
+                    <option value="">Seleccione una opción</option>
+                    <option value="sí">Sí</option>
+                    <option value="no">No</option>
+                </select><br><br>
+                <button type="submit">Enviar RSVP</button>
+            </form>
+        </article>
+    </main>
+    <footer>
+        <p>Organizador: [Tu nombre] | Teléfono: [Tu teléfono] | Correo: [Tu correo]</p>
+    </footer>
+
+    <script>
+        document.getElementById('rsvpForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('nombre').value;
+            const asistencia = document.getElementById('asistencia').value;
+
+            const mensaje = `RSVP recibido:\n${nombre}\nAsistencia: ${asistencia}`;
+
+            window.open(`whatsapp://send?text=${encodeURIComponent(mensaje)}&phone=${encodeURIComponent('+34665344363')}`);
+
+            // Limpia el formulario después de enviar
+            this.reset();
+
+            alert('Mensaje enviado correctamente');
+        });
+    </script>
+</body>
+
+</html>
